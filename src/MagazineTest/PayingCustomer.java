@@ -13,12 +13,12 @@ import java.util.ArrayList;
  */
 class PayingCustomer extends Customer {
     private String paymentMethod;
-    private ArrayList<AssociateCustomer> associates;
+    private ArrayList<String> associates;
     
     //Constructor
     public PayingCustomer(String name, String email, 
             ArrayList<Supplement> activeSupplements,Boolean isPayingCustomer,String paymentMethod,
-            ArrayList<AssociateCustomer> associates){
+            ArrayList<String> associates){
         super(name, email, activeSupplements, isPayingCustomer);
         this.setPaymentMethod(paymentMethod);
         this.setAssociates(associates);
@@ -26,16 +26,16 @@ class PayingCustomer extends Customer {
     //default Constructor
     public PayingCustomer(){
         super();
-        this.associates = new ArrayList<AssociateCustomer>();
+        this.associates = new ArrayList<String>();
         this.paymentMethod = "";
     }
     public String getPaymentMethod(){
         return this.paymentMethod;
     }
-    public ArrayList<AssociateCustomer> getAssociates(){
+    public ArrayList<String> getAssociates(){
         return this.associates;
     }
-    public void addAssociate(AssociateCustomer associateName){
+    public void addAssociate(String associateName){
         this.associates.add(associateName);
     }
     public void removeAssociate(int i){
@@ -44,7 +44,7 @@ class PayingCustomer extends Customer {
     public void setPaymentMethod(String paymentMethod){
         this.paymentMethod = paymentMethod;
     }
-    public void setAssociates(ArrayList<AssociateCustomer> associates){
+    public void setAssociates(ArrayList<String> associates){
         this.associates = associates;
     }
     

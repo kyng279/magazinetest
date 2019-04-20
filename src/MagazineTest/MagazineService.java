@@ -48,6 +48,24 @@ public final class MagazineService {
             System.out.println();
         }   
     }
+    
+    //returns all associates given a paying customer
+    public ArrayList<AssociateCustomer> getAssociateCustomers(PayingCustomer payingCustomer){
+        ArrayList<AssociateCustomer> associateCustomers = new ArrayList<AssociateCustomer>();
+        for(int i=0;i<payingCustomer.getAssociates().size();i++){
+            for(int j = 0;j < customers.size();j ++){
+                System.out.println(payingCustomer.getAssociates().get(i));
+                System.out.println(customers.get(j).getEmail());        
+                
+                if(payingCustomer.getAssociates().get(i)==customers.get(j).getEmail()){
+                    associateCustomers.add((AssociateCustomer)customers.get(j));
+                }
+            }
+            
+        }
+        return associateCustomers;
+    }
+    
 
         
     //outputs end of month email for paying customer
