@@ -5,6 +5,7 @@
  */
 package MagazineTest;
 import java.util.ArrayList;
+
 /**
  *
  * @author Ky.Nguyen
@@ -15,6 +16,7 @@ public class Customer {
     private ArrayList<Supplement> activeSupplements;
     private boolean isPayingCustomer;
     
+
     //default constructor
     public Customer(){ 
         this.name = "";

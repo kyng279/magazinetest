@@ -20,11 +20,7 @@ public class MagazineTest {
     static private Supplement supplement3 = new Supplement("Science",3.50);
     static private Supplement supplement4 = new Supplement("News",2.50);
     static private Supplement supplement5 = new Supplement("Art",3.50);
-   
-   
-    
-    
-    ArrayList<Customer> customers = new ArrayList<Customer>();
+    static private ArrayList<Customer> customers = new ArrayList<Customer>();
     
     public static void main(String[] args) {
         
@@ -37,8 +33,7 @@ public class MagazineTest {
         customer1.addActiveSupplement(supplement2);
         customer1.addActiveSupplement(supplement3);
         customer1.addAssociate("ryan@gmail.com");
-        customer1.addAssociate("mj@gmail.com");
-        
+        customer1.addAssociate("mj@gmail.com");       
         
         AssociateCustomer customer2 = new AssociateCustomer();
         customer2.setName("Ryan Jones");
@@ -55,17 +50,12 @@ public class MagazineTest {
         customer3.addActiveSupplement(supplement5);
         customer3.addActiveSupplement(supplement1);
         customer3.addActiveSupplement(supplement3);
-        
-        
+                
         ArrayList<Customer> customers_test = new ArrayList<Customer>();
         customers_test.add(customer1);
         customers_test.add(customer2);
         customers_test.add(customer3);
-        
-       
-        
-        
-       
+
         ArrayList<Supplement> supplements_test = new ArrayList<Supplement>();
         supplements_test.add(supplement1);
         supplements_test.add(supplement2);
@@ -73,20 +63,16 @@ public class MagazineTest {
         supplements_test.add(supplement4);
         supplements_test.add(supplement5);
         
-        
-       MagazineService test = new MagazineService(5.0,customers_test,supplements_test); 
-     
+       MagazineService test = new MagazineService(5.0,customers_test,supplements_test);
        
-       PayingCustomer paying = (PayingCustomer) test.getCustomers().get(0);
-       ArrayList<AssociateCustomer> associates = test.getAssociateCustomers(paying);
-       System.out.println(associates.get(0).getName());
-       System.out.println(associates.get(1).getName());
        
-       }
+       test.outputMonthlyBill(customer1);
+ 
        
         
         
         
         
     }
+}
     
