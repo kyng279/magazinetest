@@ -37,7 +37,7 @@ public final class MagazineService {
         this.supplements = new ArrayList<Supplement>();
     }
     public void magazineRun(){
-        try{
+        //try{
             System.out.println("Magazine Service Program");
             int selection = 0;
             Scanner kb = new Scanner(System.in);
@@ -91,10 +91,10 @@ public final class MagazineService {
                         kb.nextLine();
                 }
             }
-        }
-        catch(Exception e){
-            System.out.println("Error: invalid input detected!");
-        }
+        //}
+//        catch(Exception e){
+//            System.out.println("Error: invalid input detected!");
+//        }
     }
     public void outputStudentInfo(){
         
@@ -151,8 +151,10 @@ public final class MagazineService {
                 flag = true;
                 System.out.println("Associated Customer account created");
                 this.addCustomer(associateCustomer);
+                PayingCustomer payingCustomer =(PayingCustomer)this.getCustomer(email);
+                payingCustomer.addAssociate(email);
                 return;
-            }else if(emails.equals("quit")){
+            }else if(email.equals("quit")){
                 System.out.println("Associate account creation cancelled");
                 System.out.println("Returning to main menu");
                 flag = true;
@@ -439,6 +441,15 @@ public final class MagazineService {
     }
     public void addCustomer(Customer customerName){
         this.customers.add(customerName);
+    }
+    public Customer getCustomer(String email){
+        Customer customer = new Customer();
+        for(int i = 0;i<customers.size();i++){
+            if(customers.get(i).getEmail().equals(email)){
+                customer = customers.get(i);
+            }
+        }
+        return customer;
     }
 
     

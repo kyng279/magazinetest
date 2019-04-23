@@ -50,11 +50,29 @@ public class MagazineTest {
         customer3.addActiveSupplement(supplement5);
         customer3.addActiveSupplement(supplement1);
         customer3.addActiveSupplement(supplement3);
+        
+        AssociateCustomer customer4 = new AssociateCustomer();
+        customer4.setName("Nero Flow");
+        customer4.setEmail("nero@gmail.com");
+        customer4.setIsPayingCustomer(false);
+        customer4.addActiveSupplement(supplement1);
+        customer4.addActiveSupplement(supplement3);
+        customer4.addActiveSupplement(supplement4);
+        
+        AssociateCustomer customer5 = new AssociateCustomer();
+        customer5.setName("Eden Hazard");
+        customer5.setEmail("Eden@gmail.com");
+        customer5.setIsPayingCustomer(false);
+        customer5.addActiveSupplement(supplement5);
+        customer5.addActiveSupplement(supplement2);
+        customer5.addActiveSupplement(supplement1);
                 
         ArrayList<Customer> customers_test = new ArrayList<Customer>();
         customers_test.add(customer1);
         customers_test.add(customer2);
         customers_test.add(customer3);
+        customers_test.add(customer4);
+        customers_test.add(customer5);
 
         ArrayList<Supplement> supplements_test = new ArrayList<Supplement>();
         supplements_test.add(supplement1);
@@ -66,10 +84,7 @@ public class MagazineTest {
        MagazineService test = new MagazineService(5.0,customers_test,supplements_test);
        
        
-       test.outputMonthlyBill(customer1);
- 
-       
-        
+       test.magazineRun();
         
         
         
